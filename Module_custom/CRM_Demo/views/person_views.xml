@@ -1,0 +1,40 @@
+<odoo>
+	<record id="person_view_form" model="ir.ui.view">
+		<field name="name">person.form</field>
+		<field name="model">person</field>
+		<field name="arch" type="xml">
+			<form string="person">
+				<sheet>
+					<group>
+						<button name="Hehe" type="object" string="Click me"/>
+						<group>
+							<field name="name" />
+							<field name="avatar" widget='image'/>
+						</group>
+						<group>
+							<field name="gender" />
+							<field name="information" />
+						</group>
+					</group>
+					<notebook>
+						<page string="Description">
+							<field name="description" />
+						</page>
+						<page string="Description 2">
+							<field name="description2" />
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="person_action" model="ir.actions.act_window">
+		<field name="name">Person</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">person</field>
+	</record>
+
+	<menuitem id="menu_field" name="Person" />
+	<menuitem id="menu_person" name="Advance Field" parent="menu_field" action='person_action' />
+</odoo>
